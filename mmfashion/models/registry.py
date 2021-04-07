@@ -5,7 +5,7 @@ GLOBALPOOLING = Registry('global_pool')  # global pooling
 ROIPOOLING = Registry('roi_pool')  # roi pooling
 CONCATS = Registry('concat')  # concat local features and global features
 ATTRPREDICTOR = Registry('attr_predictor')  # predict attributes
-CATEPREDICTOR = Registry('cate_predictor') # predict category
+CATEPREDICTOR = Registry('cate_predictor')  # predict category
 EMBEDEXTRACTOR = Registry('embed_extractor')  # extract embeddings
 
 LANDMARKFEATUREEXTRACTOR = Registry('landmark_feature_extractor')
@@ -33,3 +33,6 @@ FEATUREREGRESSION = Registry('feature_regression')
 TPSWARP = Registry('tps_warp')
 
 GEOMETRICMATCHING = Registry('geometric_matching')
+
+UNETSKIPCONNECTIONBLOCK = Registry('unet_skip_connection_block')
+TRYON = Registry('tryon')

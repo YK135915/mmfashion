@@ -1,14 +1,14 @@
 import mmcv
 from torch import nn
 
-from .registry import (ATTRPREDICTOR, BACKBONES, CONCATS, CATEPREDICTOR,
-                       EMBEDEXTRACTOR, FEATUREEXTRACTOR, FEATURENORM,
-                       FEATURECORRELATION, FEATUREREGRESSION, GEOMETRICMATCHING,
+from .registry import (ATTRPREDICTOR, BACKBONES, CATEPREDICTOR, CONCATS,
+                       EMBEDEXTRACTOR, FEATURECORRELATION, FEATUREEXTRACTOR,
+                       FEATURENORM, FEATUREREGRESSION, GEOMETRICMATCHING,
                        GLOBALPOOLING, LANDMARKDETECTOR,
                        LANDMARKFEATUREEXTRACTOR, LANDMARKREGRESSION, LOSSES,
-                       PREDICTOR, RECOMMENDER, RETRIEVER, ROIPOOLING,
-                       TRIPLETNET, TPSWARP, TYPESPECIFICNET,
-                       VISIBILITYCLASSIFIER)
+                       PREDICTOR, RECOMMENDER, RETRIEVER, ROIPOOLING, TPSWARP,
+                       TRIPLETNET, TRYON, TYPESPECIFICNET,
+                       UNETSKIPCONNECTIONBLOCK, VISIBILITYCLASSIFIER)
 
 
 def _build_module(cfg, registry, default_args):
@@ -57,11 +57,14 @@ def build_concat(cfg):
 def build_attr_predictor(cfg):
     return build(cfg, ATTRPREDICTOR)
 
+
 def build_cate_predictor(cfg):
     return build(cfg, CATEPREDICTOR)
 
+
 def build_embed_extractor(cfg):
     return build(cfg, EMBEDEXTRACTOR)
+
 
 def build_landmark_feature_extractor(cfg):
     return build(cfg, LANDMARKFEATUREEXTRACTOR)
@@ -102,17 +105,34 @@ def build_triplet_net(cfg):
 def build_fashion_recommender(cfg):
     return build(cfg, RECOMMENDER)
 
+
 def build_feature_extractor(cfg):
     return build(cfg, FEATUREEXTRACTOR)
+
 
 def build_feature_norm(cfg):
     return build(cfg, FEATURENORM)
 
+
 def build_feature_correlation(cfg):
     return build(cfg, FEATURECORRELATION)
+
 
 def build_feature_regression(cfg):
     return build(cfg, FEATUREREGRESSION)
 
+
 def build_tps_warp(cfg):
     return build(cfg, TPSWARP)
+
+
+def build_geometric_matching(cfg):
+    return build(cfg, GEOMETRICMATCHING)
+
+
+def build_unet_skip_connection_block(cfg):
+    return build(cfg, UNETSKIPCONNECTIONBLOCK)
+
+
+def build_tryon(cfg):
+    return build(cfg, TRYON)
